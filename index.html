@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hello</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+        }
+        html{
+            position:static;
+            scroll-behavior:smooth;
+        }
+        .bod{
+            position:absolute;
+            overflow-x:scroll;
+            overflow-y:auto;
+            background-color:rgba(0,122,122);
+        }
+        .hheader{
+          position:relative;
+          left:500px;
+        }
+        h1::before {
+        content: ''; /* Empty content for the underline */
+        position: absolute; /* Position the underline */
+        width: 0; /* Start with no width */
+        height: 2px; /* Underline thickness */
+        background-color: #f00; /* Underline color */
+        left: 0;
+        bottom: 0;
+        transition: width 0.3s ease; /* Animate the width change */
+        }
+        h1:hover::before {
+            width: 100%; /* Expand the underline on hover */
+        }
+        h1:hover{
+            color:red;
+            transition: width 0.3s ease;
+        }
+        ol{
+            margin-left:70px;
+            background-color:#000000;
+            border:5px solid #00FF00;
+        }
+        ol li{
+            font-size:25px;
+            font-weight:bolder;
+            color:red;
+            
+        }
+        ol li:hover{
+            text-shadow:5px 5px 5px yellow;
+            color:yellow;
+            text-decoration:underline;
+            
+        }
+    </style>
+</head>
+<body class = 'bod'>
+    <header class = 'hheader'>
+        <h1>Some notes and advices for web apps</h1>
+    </header>
+    <hr>
+    <ol>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ol>
+    <script>
+        const ol = window.document.getElementsByTagName("ol")[0];
+        ol.start = '2';
+        ol.type = 'I';
+        ol.addEventListener("click", () => {
+            window.alert("this is an event listener/observer");
+            const h2 = window.document.createElement("h2");
+            h2.innerHTML = "I've settled the start tag-att from the list to 2 and the type to romman algarism";
+            window.document.body.appendChild(h2);
+        });
+        String.prototype.myUpper = function(){
+            return this.toUpperCase();
+        }
+        window.document.addEventListener("DOMContentLoaded", () =>{
+            const n1 = window.confirm("Hello World! Ready? :)");
+            if(n1){
+                window.alert("Great!".myUpper().concat(" \n Some key advices"));
+            }else{
+                alert("that's sad :/".concat("\n some key advices for when you want to start"));
+            }
+        });
+        const obj1 = new Object(JSON.parse('{"x1":"The internet, for common users is driven by the HTTP protocol so if you want to be a web dev be sure to look at this subject"}'));
+        obj1.x2 = "Mainly the 4 basic methods from this clinet-server request/response driven protocol: [PUT, POST, UPDATE, DELETE]";
+        obj1.x3 = "The most common design pattern used for the internet, accornding to the COD3R team, is the Observer Design Pattern";
+        obj1.x4 = "although the CRUD Design pattern, accordingly to other author in the area is basic everything on the internet";
+        obj1.x5 = "so be sure to study this as well, study everything and learn from different opinions but don't addopt them as they were your own opinion";
+        obj1.x6 = "The webb apps, on front-end perspective consist in 'only' 3 layers or branches:"
+        obj1.x7 = "HTML, CSS, and JS and it's derivates, the only coding language here is JS.";
+        obj1.x8 = "If you want to create your front-end or static sites you will have to at least know these tools";
+        obj1.x9 = "JS, and it's super version TS are the basis of today's internet";
+        obj1.x10 = "JS is a high-level, interpreted language with multiple paradigma support that mainly runs on 2 context/runtimes [Browser and Node]";
+        obj1.x11 = "The strongest feature in JS is to be a interpreted language with high levels of abstraction and it's dynamic typing and the main issue of it is the weak-typing";
+        obj1.x12 = "TS came to topple the bad aspects of JS [I call TS the C++ version of JS]";
+        obj1.x13 = "Just like SASS/SCSS is the superversion of the common CSS";
+        obj1.x14 = "JS supports a special type of paradigma, the Functional and OOP";
+        obj1.x15 = "Both of them are essential to modern projects";
+        obj1.x16 = "In JS, before ES5/6 [2015] we didn't have some classes, like the proper class reserved word";
+        obj1.x17 = "Because until 2015, in JS context, OOP classes and Functions where the same thing and still are but now classes have a formal domain and typing in JS";
+        obj1.x18 = "Pseudo-classes and attributes in CSS are very useful";
+        
+        Object.prototype.runn = function(){
+            let arry1 = Object.entries((this));
+            
+            return arry1;
+        }
+
+        const arry = obj1.runn();
+        window.console.log(arry);
+        const listt = window.document.getElementsByTagName("li");
+        const arry2 = Array.from(listt);
+        arry2.forEach((x,counter=0)=>{
+            x.innerHTML = arry[counter];
+            counter += 1;
+        });
+    </script>
+</body>
+</html>
